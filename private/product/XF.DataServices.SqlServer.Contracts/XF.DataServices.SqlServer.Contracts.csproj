@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{E1DAEA2E-8754-4E57-8EE5-2ADC71C77440}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XF.DataServices</RootNamespace>
+    <AssemblyName>XF.DataServices.SqlServer.Contracts</AssemblyName>
+  </PropertyGroup>
+  <Import Project="$(root)\build\targets\eXtensoft.product.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(private)\assemblyinfo\GlobalAssemblyInfo.cs">
+      <Link>
+      </Link>
+    </Compile>
+    <Compile Include="configuration\Case.cs" />
+    <Compile Include="configuration\DataMap.cs" />
+    <Compile Include="configuration\Model.cs" />
+    <Compile Include="configuration\ModelAction.cs" />
+    <Compile Include="configuration\SqlServerConfigManager.cs" />
+    <Compile Include="configuration\SqlServerContext.cs" />
+    <Compile Include="configuration\SqlStoredProcedure.cs" />
+    <Compile Include="configuration\StrategyOption.cs" />
+    <Compile Include="configuration\Switch.cs" />
+    <Compile Include="contracts\IBorrower`1.cs" />
+    <Compile Include="contracts\IListBorrower`1.cs" />
+    <Compile Include="contracts\ISqlCommandContext`1.cs" />
+    <Compile Include="contracts\ISqlStoredProcedureFormatter.cs" />
+    <Compile Include="sql.server\DefaultSqlStoredProcedureFormatter.cs" />
+    <Compile Include="discovery\Parameter.cs" />
+    <Compile Include="discovery\SprocMapCache.cs" />
+    <Compile Include="discovery\SQLCommand.cs" />
+    <Compile Include="discovery\SqlParameter.cs" />
+    <Compile Include="discovery\SqlResolver.cs" />
+    <Compile Include="Resources.Designer.cs" />
+    <Compile Include="sql.server\Borrower`1.cs" />
+    <Compile Include="sql.server\Builder`1.cs" />
+    <Compile Include="sql.server\Parser`1.cs" />
+    <Compile Include="SqlServerModelDataGateway`1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XF.Common.Server.Contracts\XF.Common.Server.Contracts.csproj">
+      <Project>{7feee779-3ad3-43fe-8f0a-57162d8aa9c3}</Project>
+      <Name>XF.Common.Server.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XF.Common\XF.Common.csproj">
+      <Project>{11315cae-c02d-42c6-84ac-b8cca55c8525}</Project>
+      <Name>XF.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\Discovery.StoredProcedures.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

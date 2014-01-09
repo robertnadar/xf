@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{7FEEE779-3AD3-43FE-8F0A-57162D8AA9C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XF.Common</RootNamespace>
+    <AssemblyName>XF.Common.Server.Contracts</AssemblyName>
+  </PropertyGroup>
+  <Import Project="$(root)\build\targets\eXtensoft.product.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(private)\assemblyinfo\GlobalAssemblyInfo.cs">
+      <Link>
+      </Link>
+    </Compile>
+    <Compile Include="contracts\IModelDataGatewayInitializable.cs" />
+    <Compile Include="ErrorMessages.Designer.cs" />
+    <Compile Include="common\Exceptions.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="contracts\IModelDataGateway`1.cs" />
+    <Compile Include="MessageFormats.Designer.cs" />
+    <Compile Include="common\ModelDataGateway`1.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XF.Common\XF.Common.csproj">
+      <Project>{11315cae-c02d-42c6-84ac-b8cca55c8525}</Project>
+      <Name>XF.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ErrorMessages.resx" />
+    <EmbeddedResource Include="MessageFormats.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

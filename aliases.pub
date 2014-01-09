@@ -1,0 +1,13 @@
+root=pushd "%root%"
+devdir=if exist "%devdir%" ( pushd "%devdir%" ) else ( echo Your developer directory does not yet exist, create your developer directory at "%devdir%" )
+prod=pushd "%product%"
+tests=pushd "%tests%"
+tools=pushd "%tools%"
+aliases=doskey /macros
+alias=doskey $*
+npp="C:\Program Files (x86)\Notepad++\notepad++.exe" $*
+sln=pushd "%product%\solutions"
+n=notepad $*
+up=cd ..
+back=popd
+priv=pushd "%private%"

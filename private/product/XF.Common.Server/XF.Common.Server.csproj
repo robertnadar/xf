@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{E4EEE7FB-3E38-4C6B-BE82-977A5ABFC403}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XF.Common</RootNamespace>
+    <AssemblyName>XF.Common.Server</AssemblyName>
+  </PropertyGroup>
+  <Import Project="$(root)\build\targets\eXtensoft.product.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(private)\assemblyinfo\GlobalAssemblyInfo.cs">
+      <Link>
+      </Link>
+    </Compile>
+    <Compile Include="caching\NetMemoryCache.cs" />
+    <Compile Include="common\AppSettingsStrategyResolver.cs" />
+    <Compile Include="common\ModuleLoader`1.cs" />
+    <Compile Include="common\TypeMapCache.cs" />
+    <Compile Include="common\TypeMapContainer.cs" />
+    <Compile Include="configuration\ConfigStrategyResolver.cs" />
+    <Compile Include="services\ModelDataGatewayDataService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XF.Common.Server.Contracts\XF.Common.Server.Contracts.csproj">
+      <Project>{7feee779-3ad3-43fe-8f0a-57162d8aa9c3}</Project>
+      <Name>XF.Common.Server.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XF.Common\XF.Common.csproj">
+      <Project>{11315cae-c02d-42c6-84ac-b8cca55c8525}</Project>
+      <Name>XF.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

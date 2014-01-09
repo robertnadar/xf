@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectGuid>{11315CAE-C02D-42C6-84AC-B8CCA55C8525}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XF.Common</RootNamespace>
+    <AssemblyName>XF.Common</AssemblyName>
+  </PropertyGroup>
+  <Import Project="$(root)\build\targets\eXtensoft.product.targets" />
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(private)\assemblyinfo\GlobalAssemblyInfo.cs">
+      <Link>
+      </Link>
+    </Compile>
+    <Compile Include="common\CacheStrategyLoader.cs" />
+    <Compile Include="common\CommonServicesWriter.cs" />
+    <Compile Include="common\eventwriter\Entry.cs" />
+    <Compile Include="common\eventwriter\ErrorEntry.cs" />
+    <Compile Include="common\eventwriter\EventEntry.cs" />
+    <Compile Include="common\EventWriter.cs" />
+    <Compile Include="common\EventWriterLoader.cs" />
+    <Compile Include="common\eventwriter\EventTypeOption.cs" />
+    <Compile Include="common\ExtensionMethods.cs" />
+    <Compile Include="common\NetMemoryCache.cs" />
+    <Compile Include="common\SeverityType.cs" />
+    <Compile Include="common\eventwriter\StatusEntry.cs" />
+    <Compile Include="common\WindowsIdentityProvider.cs" />
+    <Compile Include="common\XFConstants.cs" />
+    <Compile Include="configuration\eXtensibleConfig.cs" />
+    <Compile Include="configuration\eXtensibleFrameworkElement.cs" />
+    <Compile Include="configuration\eXtensibleFrameworkElementCollection.cs" />
+    <Compile Include="configuration\eXtensibleFrameworkSection.cs" />
+    <Compile Include="configuration\eXtensibleStrategyElement.cs" />
+    <Compile Include="configuration\eXtensibleStrategyElementCollection.cs" />
+    <Compile Include="configuration\eXtensibleStrategyResolver.cs" />
+    <Compile Include="configuration\eXtensibleStrategySection.cs" />
+    <Compile Include="configuration\eXtensibleStrategySectionGroup.cs" />
+    <Compile Include="configuration\StrategyTypeOption.cs" />
+    <Compile Include="configuration\XmlConstants.cs" />
+    <Compile Include="contracts\ICache.cs" />
+    <Compile Include="contracts\ICacheable`1.cs" />
+    <Compile Include="contracts\IContext.cs" />
+    <Compile Include="contracts\ICriterion.cs" />
+    <Compile Include="contracts\IDataRequestService.cs" />
+    <Compile Include="contracts\IDataService.cs" />
+    <Compile Include="contracts\IDisplay.cs" />
+    <Compile Include="contracts\IEventWriter.cs" />
+    <Compile Include="contracts\IMessage`1.cs" />
+    <Compile Include="contracts\IModelRequestService.cs" />
+    <Compile Include="contracts\IModelService.cs" />
+    <Compile Include="contracts\IRequestContext.cs" />
+    <Compile Include="contracts\IRequest`1.cs" />
+    <Compile Include="contracts\IResponse`1.cs" />
+    <Compile Include="contracts\IStrategyResolver.cs" />
+    <Compile Include="contracts\ITypeMap.cs" />
+    <Compile Include="contracts\ITypeMapCache.cs" />
+    <Compile Include="contracts\IUserIdentityProvider.cs" />
+    <Compile Include="enumerations\LoggingStrategyOption.cs" />
+    <Compile Include="enumerations\ModelActionOption.cs" />
+    <Compile Include="enumerations\OperatorTypeOption.cs" />
+    <Compile Include="enumerations\TraceEventTypeOption.cs" />
+    <Compile Include="models\ApplicationContext.cs" />
+    <Compile Include="models\Criterion.cs" />
+    <Compile Include="models\DisplayItem.cs" />
+    <Compile Include="models\Message`1.cs" />
+    <Compile Include="models\RequestStatus.cs" />
+    <Compile Include="models\TypedItem.cs" />
+    <Compile Include="RequestStatii.Designer.cs" />
+    <Compile Include="common\GenericSerializer.cs" />
+    <Compile Include="common\KeyPairStrategyResolver.cs" />
+    <Compile Include="services\ModelRequestService.cs" />
+    <Compile Include="services\PassThroughModelRequestService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="RequestStatii.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
